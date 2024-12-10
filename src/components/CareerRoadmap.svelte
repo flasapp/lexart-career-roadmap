@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte"
   import levels from '/src/lib/js/levels.js';
+  import { fade, fly } from 'svelte/transition';
 
 	const careerLevels = levels;
 
@@ -46,12 +47,25 @@
 </script>
 
 <main class="bg-purple">
-  <section class="info-level">
+  {#key selectedLevel.name}
+  <section class="info-level" in:fly={{ x: 1200, duration: 400, delay: 400 }} out:fly={{ x: -200, duration: 400 }}>
+    <!-- {#if selectedLevel} -->
+    <h2 in:fade={{ duration: 600 }} out:fade={{ duration: 400 }}>
+      {selectedLevel.name}
+    </h2>
+    <p in:fade={{ duration: 600 }} out:fade={{ duration: 400 }}>
+      {selectedLevel.description}
+    </p>
+    <div in:fade={{ duration: 600 }} out:fade={{ duration: 400 }}>
+      {@html selectedLevel.detail}
+    </div>
+  </section>
+  {/key}
+  <!-- <section class="info-level">
     <h2>{ selectedLevel.name }</h2>
     <p>{ selectedLevel.description }</p>
     <div>{@html selectedLevel.detail}</div>
-    <!-- <small>{ selectedLevel.years }</small> -->
-  </section>
+  </section> -->
 	<div class="stars">
 
 		<div class="central-body">
@@ -204,6 +218,8 @@ main {
   margin: 0;
   width: 100%;
   height: 100%;
+  min-height: 600px;
+  min-width: 1200px;
   font-family: "Dosis", sans-serif;
   font-weight: 300;
   height: 100vh !important;
@@ -271,6 +287,10 @@ main {
   background-repeat: repeat;
   background-size: contain;
   background-position: left top;
+
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
 }
 
 .glowing_stars .star {
