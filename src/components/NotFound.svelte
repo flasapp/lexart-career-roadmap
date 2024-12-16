@@ -129,8 +129,6 @@ DRIBBBLE: https://dribbble.com/shots/4330167-404-Page-Lost-In-Space
   transition: all 0.3s ease;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Dosis:300,400,500");
-
 @-moz-keyframes rocket-movement {
   100% {
     -moz-transform: translate(1200px, -600px);
@@ -210,7 +208,6 @@ main {
   margin: 0;
   width: 100%;
   height: 100%;
-  font-family: "Dosis", sans-serif;
   font-weight: 300;
   height: 100vh !important;
   -webkit-user-select: none;

@@ -132,7 +132,7 @@
   transition: all 0.3s ease;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Dosis:300,400,500");
+/* @import url("https://fonts.googleapis.com/css?family=Dosis:300,400,500"); */
 
 @-moz-keyframes rocket-movement {
   100% {
@@ -215,7 +215,6 @@ main {
   height: 100%;
   min-height: 600px;
   min-width: 1200px;
-  font-family: "Dosis", sans-serif;
   font-weight: 300;
   height: 100vh !important;
   -webkit-user-select: none;
