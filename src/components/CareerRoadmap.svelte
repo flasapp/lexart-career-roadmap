@@ -17,15 +17,15 @@
 	// const careerLevels = levels;
   const careerLevels = [
     {
-        url: 'https://salehriaz.com/404Page/img/earth.svg', width: '100', rocketX: '14%', rocketY: '30%', component: FS1
+        name: 'Full Stack L1', url: 'https://salehriaz.com/404Page/img/earth.svg', width: '100', rocketX: '14%', rocketY: '30%', component: FS1
     },
-    { url: './venus.png', width: '100', rocketX: '24%', rocketY: '40%', component: FS2 },
-    { url: './mars.png', width: '100', rocketX: '34%', rocketY: '50%', component: FS3  },
-    { url: './jupiter.png',width: '100', rocketX: '44%', rocketY: '60%', component: SA1 },
-    { url: './saturn.png',width: '100', rocketX: '54%', rocketY: '70%', component: SA2 },
-    { url: './uranus.png',width: '100', rocketX: '64%', rocketY: '80%', component: SA3 },
-    { url: './neptune.png',width: '100', rocketX: '74%', rocketY: '90%' },
-    { url: './pluto.png',width: '100', rocketX: '84%', rocketY: '100%' },
+    { name: 'Full Stack L2', url: './venus.png', width: '100', rocketX: '24%', rocketY: '40%', component: FS2 },
+    { name: 'Full Stack L3', url: './mars.png', width: '100', rocketX: '34%', rocketY: '50%', component: FS3  },
+    { name: 'Software Architect L1', url: './jupiter.png',width: '100', rocketX: '44%', rocketY: '60%', component: SA1 },
+    { name: 'Software Architect L2', url: './saturn.png',width: '100', rocketX: '54%', rocketY: '70%', component: SA2 },
+    { name: 'Software Architect L3', url: './uranus.png',width: '100', rocketX: '64%', rocketY: '80%', component: SA3 },
+    { name: 'Architect (ver de quitar o no)', url: './neptune.png',width: '100', rocketX: '74%', rocketY: '90%' },
+    { name: 'Solution Architect', url: './pluto.png',width: '100', rocketX: '84%', rocketY: '100%' },
 ];
 
   let selectedLevel = careerLevels[0];
