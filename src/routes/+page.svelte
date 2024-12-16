@@ -14,7 +14,7 @@
 
 <style>
 	body{
-		margin: 0;
+		margin: 0px !important;
 		padding: 0;
 	}
 	section {

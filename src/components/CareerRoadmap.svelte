@@ -1,9 +1,32 @@
 <script>
+  //core
   import { onMount } from "svelte"
-  import levels from '/src/lib/js/levels.js';
+  //utils and helpers
   import { fade, fly } from 'svelte/transition';
+  import levels from '/src/lib/js/levels.js';
+  //components
+  import FS1 from '/src/components/levels/FS1.svelte';
+  import FS2 from '/src/components/levels/FS2.svelte';
+  import FS3 from '/src/components/levels/FS3.svelte';
+  import SA1 from '/src/components/levels/SA1.svelte';
+  import SA2 from '/src/components/levels/SA2.svelte';
+  import SA3 from '/src/components/levels/SA3.svelte';
 
-	const careerLevels = levels;
+
+
+	// const careerLevels = levels;
+  const careerLevels = [
+    {
+        url: 'https://salehriaz.com/404Page/img/earth.svg', width: '100', rocketX: '14%', rocketY: '30%', component: FS1
+    },
+    { url: './venus.png', width: '100', rocketX: '24%', rocketY: '40%', component: FS2 },
+    { url: './mars.png', width: '100', rocketX: '34%', rocketY: '50%', component: FS3  },
+    { url: './jupiter.png',width: '100', rocketX: '44%', rocketY: '60%', component: SA1 },
+    { url: './saturn.png',width: '100', rocketX: '54%', rocketY: '70%', component: SA2 },
+    { url: './uranus.png',width: '100', rocketX: '64%', rocketY: '80%', component: SA3 },
+    { url: './neptune.png',width: '100', rocketX: '74%', rocketY: '90%' },
+    { url: './pluto.png',width: '100', rocketX: '84%', rocketY: '100%' },
+];
 
   let selectedLevel = careerLevels[0];
   let selectedIndex = 0;
@@ -22,55 +45,26 @@
     document.querySelector('.object_rocket').style.bottom = destinyPositionY;
     selectedLevel = level;
     selectedIndex = index;
-		// const planetElement = planetElements[index];
-		// if (planetElement) {
-    //   const rect = planetElement.getBoundingClientRect();
-    //   rocketPosition = { x: rect.left + window.scrollX, y: rect.top + window.scrollY };
-    //   selectedLevel = level;
-    //   isRocketMoving = true;
-    //   setTimeout(() => {
-    //     isRocketMoving = false;
-    //   }, 1000); // Match this with the animation duration
-		// }
 	}
 
   onMount(() => {
-
     handlePlanetClick(careerLevels[0], 0);
-    // Set initial rocket position to the first planet
-    // if (planetElements[0]) {
-    //   const rect = planetElements[0].getBoundingClientRect();
-    //   rocketPosition = { x: rect.left + window.scrollX, y: rect.top + window.scrollY };
-    // }
   });
 
 </script>
 
 <main class="bg-purple">
-  {#key selectedLevel.name}
-  <section class="info-level" in:fly={{ x: 1200, duration: 400, delay: 400 }} out:fly={{ x: -200, duration: 400 }}>
-    <!-- {#if selectedLevel} -->
-    <h2 in:fade={{ duration: 600 }} out:fade={{ duration: 400 }}>
-      {selectedLevel.name}
-    </h2>
-    <p in:fade={{ duration: 600 }} out:fade={{ duration: 400 }}>
-      {selectedLevel.description}
-    </p>
-    <div in:fade={{ duration: 600 }} out:fade={{ duration: 400 }}>
-      {@html selectedLevel.detail}
-    </div>
-  </section>
-  {/key}
-  <!-- <section class="info-level">
-    <h2>{ selectedLevel.name }</h2>
-    <p>{ selectedLevel.description }</p>
-    <div>{@html selectedLevel.detail}</div>
-  </section> -->
-	<div class="stars">
+  <div class="stars">
+    {#key selectedLevel.url}
+      <section class="info-level" in:fly={{ x: 1200, duration: 400, delay: 400 }} out:fly={{ x: -200, duration: 400 }}>
+        <svelte:component this={selectedLevel.component} />
+      </section>
+    {/key}
+  </div>
+  
+	<div class="stars levels-container">
 
 		<div class="central-body">
-			<!-- <img class="image-404" src="https://salehriaz.com/404Page/img/404.svg" width="300px">
-			<a href="https://salehriaz.com/404Page/404.html" class="btn-go-home" target="_blank">GO BACK HOME</a> -->
 		</div>
 		<div class="objects">
 			<img class="object_rocket { isRocketMoving ? 'rocket-moving' : ''}" src="https://salehriaz.com/404Page/img/rocket.svg" width="40px" alt="Rocket">
@@ -105,24 +99,25 @@
 
 </main>
 <style>
-/*
-VIEW IN FULL SCREEN MODE
-FULL SCREEN MODE: http://salehriaz.com/404Page/404.html
 
-DRIBBBLE: https://dribbble.com/shots/4330167-404-Page-Lost-In-Space
-*/
 .info-level{
   color:#f6f6f6; 
-  padding: 8px; 
+  padding: 8px 16px; 
   border-radius:4px; 
-  border: 1px dashed #f6f6f6; 
-  width: 250px; 
+  max-width: 800px; 
   margin-left: 50px; 
   margin-top: 50px;
   transition: all 0.3s ease;
   /* font-size: 12px; */
   color: white;
   text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(7.1px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 
   
 }
@@ -287,12 +282,12 @@ main {
   background-repeat: repeat;
   background-size: contain;
   background-position: left top;
-
+}
+.levels-container {
   position: absolute;
   width: 100%;
   bottom: 20px;
 }
-
 .glowing_stars .star {
   position: absolute;
   border-radius: 100%;
