@@ -9,19 +9,20 @@
 </script>
 
 <div>
-	<h2 in:fade={{ duration: 600 }} out:fade={{ duration: 400 }}>
+	<h2 in:fade={{ duration: 600 }} out:fade={{ duration: 400 }} style="margin-bottom:-2px">
 		{level.name}
 	</h2>
-	<p in:fade={{ duration: 600 }} out:fade={{ duration: 400 }}>
+	<small in:fade={{ duration: 600 }} out:fade={{ duration: 400 }}>
 		{level.description}
-	</p>
-	<div in:fade={{ duration: 600 }} out:fade={{ duration: 400 }}>
-		<h4> Mínimum duration: Two year </h4>
-		<h4> Requirements </h4>
+	</small>
+	<div in:fade={{ duration: 600 }} out:fade={{ duration: 400 }} style="margin-top:12px; line-height: 24px">
+		<span> Mínimum duration for next role: 1 year</span>
+		<h4 style="margin-bottom:-4px"> Capabilities/Skills: </h4>
 		<ul>
 			<li>Complete command of technological stack.</li>
 			<li>Solving complex problems.</li>
 			<li>Introduction of technical improvements and process optimization.</li>
 		</ul>
+		<h4 style="margin-bottom:12px">For the following role, a test will be required. Googl Luck! 🚀 </h4>
 	</div>
 </div>

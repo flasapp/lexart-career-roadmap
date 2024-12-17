@@ -11,6 +11,7 @@
   import SA1 from '/src/components/levels/SA1.svelte';
   import SA2 from '/src/components/levels/SA2.svelte';
   import SA3 from '/src/components/levels/SA3.svelte';
+  import SO from '/src/components/levels/SO.svelte';
 
 
 
@@ -24,8 +25,7 @@
     { name: 'Software Architect L1', url: './jupiter.png',width: '100', rocketX: '44%', rocketY: '60%', component: SA1 },
     { name: 'Software Architect L2', url: './saturn.png',width: '100', rocketX: '54%', rocketY: '70%', component: SA2 },
     { name: 'Software Architect L3', url: './uranus.png',width: '100', rocketX: '64%', rocketY: '80%', component: SA3 },
-    { name: 'Architect (ver de quitar o no)', url: './neptune.png',width: '100', rocketX: '74%', rocketY: '90%' },
-    { name: 'Solution Architect', url: './pluto.png',width: '100', rocketX: '84%', rocketY: '100%' },
+    { name: 'Solution Architect', url: './pluto.png',width: '100', rocketX: '74%', rocketY: '100%', component: SO },
 ];
 
   let selectedLevel = careerLevels[0];
