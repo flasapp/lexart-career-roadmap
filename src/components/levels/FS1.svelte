@@ -1,9 +1,11 @@
 <script>
 	import { fly, fade } from 'svelte/transition';
+	import AstroImage from '../AstroImage.svelte';
 	let level = {
 		name: 'Full Stack L1',
 		description: 'Entry-level full stack developer',
-		years: 1
+		years: 1,
+		image : './FS1.png'
 	};
 </script>
 
@@ -26,6 +28,8 @@
 		<h4 style="margin-bottom:12px"> 
 			For the following role, it is necessary to spend one year in the position and obtain evaluations from your lead and project references. 👩🏻‍💻 
 		</h4>
+
+		<AstroImage src={level.image} alt="{level.name}" />
 
 	</div>
 </div>
