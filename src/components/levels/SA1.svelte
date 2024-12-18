@@ -1,9 +1,12 @@
 <script>
 	import { fly, fade } from 'svelte/transition';
+	import AstroImage from '../AstroImage.svelte';
+
 	let level = { 
 		name: 'Software Architect L1', 
 		description: 'Beginer Architect', 
-		years: 3
+		years: 3,
+		image : './SA1.png'
 	};
 
 </script>
@@ -24,4 +27,5 @@
 		</ul>
 		<h4 style="margin-bottom:12px"> For this role, it is necessary to take a test. 🥸 </h4>
 	</div>
+	<AstroImage src='./SA1.png' alt="{level.name}" />
 </div>

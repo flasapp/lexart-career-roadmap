@@ -1,9 +1,12 @@
 <script>
 	import { fly, fade } from 'svelte/transition';
+	import AstroImage from '../AstroImage.svelte';
+
 	let level = { 
 		name: 'Full Stack L2', 
 		description: 'Intermediate full stack developer', 
-		years: 2
+		years: 2,
+		image : './FS2.png'
 	};
 
 </script>
@@ -26,4 +29,6 @@
 			For the following role, it is necessary to spend one year in the position and obtain evaluations from your lead and project references. 👩🏻‍💻 
 		</h4>
 	</div>
+	<AstroImage src={level.image} alt="{level.name}" />
+	
 </div>

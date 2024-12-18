@@ -3,7 +3,7 @@
 	export let alt = ''
 </script>
 
-<img src="{src}" alt={alt} class="astro-image">
+<img {src} {alt} class="astro-image">
 
 <style>
 	.astro-image {

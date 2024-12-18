@@ -1,6 +1,7 @@
 <script>
 	import { fly, fade } from 'svelte/transition';
 	import AstroImage from '../AstroImage.svelte';
+	
 	let level = {
 		name: 'Full Stack L1',
 		description: 'Entry-level full stack developer',
