@@ -58,6 +58,7 @@
     {#key selectedLevel.url}
       <section class="info-level" in:fly={{ x: 1200, duration: 400, delay: 400 }} out:fly={{ x: -200, duration: 400 }}>
         <svelte:component this={selectedLevel.component} />
+        <button> > </button>
       </section>
     {/key}
   </div>
