@@ -123,6 +123,8 @@
   -webkit-backdrop-filter: blur(7.1px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   display: grid;
+  z-index: 2;
+  position: absolute;
   
 }
 
@@ -226,9 +228,9 @@ main {
 }
 .levels-container {
   position: absolute;
-  width: 100%;
-  bottom: 20px;
-  left: 0;
+  width: 80%;
+  bottom: 50px;
+  left: 10%;
 }
 .glowing_stars .star {
   position: absolute;
