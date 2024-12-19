@@ -1,7 +1,8 @@
 <script>
 	import { fly, fade } from 'svelte/transition';
 	import AstroImage from '../AstroImage.svelte';
-	
+	import Title from '../Title.svelte';
+
 	let level = {
 		name: 'Full Stack L1',
 		description: 'Entry-level full stack developer',
@@ -11,9 +12,7 @@
 </script>
 
 <div>
-	<h2 in:fade={{ duration: 600 }} out:fade={{ duration: 400 }} style="margin-bottom:-2px">
-		{level.name}
-	</h2>
+	<Title title={level.name} />
 	<small in:fade={{ duration: 600 }} out:fade={{ duration: 400 }}>
 		{level.description}
 	</small>
@@ -26,9 +25,9 @@
 			<li>Basic version control (Git).</li>
 		</ul>
 
-		<h4 style="margin-bottom:12px"> 
+		<span style="margin-bottom:12px"> 
 			For the following role, it is necessary to spend one year in the position and obtain evaluations from your lead and project references. 👩🏻‍💻 
-		</h4>
+		</span>
 
 		<AstroImage src={level.image} alt="{level.name}" />
 

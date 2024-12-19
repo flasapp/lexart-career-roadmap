@@ -1,6 +1,7 @@
 <script>
 	import { fly, fade } from 'svelte/transition';
 	import AstroImage from '../AstroImage.svelte';
+	import Title from '../Title.svelte';
 
 	let level = { 
 		name: 'Software Architect L1', 
@@ -11,9 +12,7 @@
 
 </script>
 <div>
-	<h2 in:fade={{ duration: 600 }} out:fade={{ duration: 400 }} style="margin-bottom:-2px">
-		{level.name}
-	</h2>
+	<Title title={level.name} />
 	<small in:fade={{ duration: 600 }} out:fade={{ duration: 400 }}>
 		{level.description}
 	</small>
