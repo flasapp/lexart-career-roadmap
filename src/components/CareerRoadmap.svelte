@@ -35,7 +35,6 @@
   let planetElements = [];
 
 	function handlePlanetClick(level, index, event) {
-    console.log("click")
     let destinyPositionY = careerLevels[index].rocketY;
     let destinyPositionX = careerLevels[index].rocketX;
     isRocketMoving = true
@@ -61,7 +60,7 @@
         <svelte:component this={selectedLevel.component} />
         <div style="display: flex; justify-content:space-evenly; gap: 1rem">
           <button style="width: 100%" on:click={() => handlePlanetClick(careerLevels[selectedIndex - 1], selectedIndex - 1)} disabled='{selectedIndex == 0}'> Previous </button>
-          <button style="width: 100%" on:click={() => handlePlanetClick(careerLevels[selectedIndex + 1], selectedIndex + 1)}> Next </button>
+          <button style="width: 100%" on:click={() => handlePlanetClick(careerLevels[selectedIndex + 1], selectedIndex + 1)} disabled='{selectedIndex == careerLevels.length - 1}'> Next </button>
         </div>
         
       </section>
@@ -285,13 +284,18 @@ main {
 
 button{
   padding: 8px;
-  background: transparent;
-  border: 1px solid white;
-  color: white;
+  background: #f2f2f2;
+  border: 1px solid #666;
+  color: #666;
   border-radius: 4px;
   font-size: 1.2rem;
   cursor: pointer;
   margin-top: 1rem;
+}
+button:disabled{
+  background: #666;
+  color: #f2f2f2;
+  cursor: not-allowed;
 }
 
 @-moz-keyframes rocket-movement {
