@@ -109,7 +109,7 @@
   color:#f6f6f6; 
   padding: 32px; 
   border-radius:4px; 
-  max-width: 800px; 
+  width: 1000px; 
   /* margin-left: 50px;  */
   /* margin-top: 50px; */
   transition: all 0.3s ease;
