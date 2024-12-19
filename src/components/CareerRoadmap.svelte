@@ -291,11 +291,13 @@ button{
   font-size: 1.2rem;
   cursor: pointer;
   margin-top: 1rem;
+  transition: all 0.3s ease;
 }
 button:disabled{
   background: #666;
   color: #f2f2f2;
   cursor: not-allowed;
+  transition: all 0.3s ease;
 }
 
 @-moz-keyframes rocket-movement {
